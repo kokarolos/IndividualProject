@@ -1,0 +1,5 @@
+C:\Users\Karolos\source\repos\IndividualProject2\IndividualProject\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\Users\Karolos\source\repos\IndividualProject2\IndividualProject\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\Users\Karolos\source\repos\IndividualProject2\IndividualProject\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\Users\Karolos\source\repos\IndividualProject2\IndividualProject\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\Users\Karolos\source\repos\IndividualProject2\IndividualProject\ConsoleApp1\obj\Debug\ConsoleApp1.pdb

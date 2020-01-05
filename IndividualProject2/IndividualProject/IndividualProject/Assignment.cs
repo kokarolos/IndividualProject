@@ -7,6 +7,7 @@ namespace IndividualProject
         public string title { get; set; }
         public string description { get; set; }
         public DateTime subDateTime { get; set; }
+
         public float oralMark { get; set; }
         public float totalMark { get; set; }
 
@@ -21,7 +22,7 @@ namespace IndividualProject
         }
         public void Print()
         {
-            Console.WriteLine($"Assignment:{title} {description} until {subDateTime.ToShortDateString()} oral mark{oralMark} and total {totalMark}");
+            Console.WriteLine($"Assignment:{title} {description} until {subDateTime} oral mark{oralMark} and total {totalMark}");
         }
         public void SimplePrint()
         {

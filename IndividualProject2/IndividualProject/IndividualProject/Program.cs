@@ -7,82 +7,82 @@ namespace IndividualProject
     {
         static void Main(string[] args)
         {
+            var d = new DataLoader(); // So data will load first
             Console.WriteLine("For synthetic data press 1 for userinput press 2");
             var userInput = Convert.ToInt32(Console.ReadLine());
-            if(userInput == 1)
+            if (userInput == 1)
             {
-                var d = new DataLoader();
-                //d.PrintCourses();
-                //d.PrintStudents();
-                //d.PrintAssigments();
-                //d.PrintTrainers();
-                //d.PrintCoursesPerStudent();
-                //d.PrintTrainersPerCourse();
-                //d.PrintAssigmentsPerCourse();
-                //d.PrintStudentCountOfCourses();
-                //d.PritAssigmentsPerStudent();
-                DateTime dt = Convert.ToDateTime(Console.ReadLine());
-                d.CheckDates(dt);
+                SyntheticMenu();
+                var menuChoice = Convert.ToInt32(Console.ReadLine());
+                switch (menuChoice)
+                {
+                    case 1:
+                        Console.SetWindowSize(160, 50);
+                        d.PrintStudents();
+
+                        break;
+                    case 2:
+                        d.PrintCourses();
+                        break;
+                    case 3:
+                        Console.SetWindowSize(160, 50);
+                        d.PrintAssigments();
+                        break;
+                    case 4:
+                        d.PrintTrainers();
+                        break;
+                    case 5:
+                        Console.SetWindowSize(160, 50);
+                        d.PrintStudentPerCourse();
+                        break;
+                    case 6:
+                        d.PrintTrainersPerCourse();
+                        break;
+                    case 7:
+                        d.PrintAssigmentsPerCourse();
+                        break;
+                    case 8:
+                        d.PrintStudentCountOfCourses();
+                        break;
+                    case 9:
+                        Console.SetWindowSize(160, 50);
+                        d.PrintAssigmentsPerStudent();
+                        break;
+                    default: SyntheticMenu();
+                        break;
+                }
+                Console.WriteLine("Press key backspace to go back or ESC to quit ");
+                ConsoleKeyInfo key = Console.ReadKey();
+               
+                //DateTime dt = new DateTime(2020, 3,11);
+                //d.dt = dt;
+                //d.CheckDates();
 
             }
-
-
-
         }
 
-        public static void MenuOptions()
+        public static void InputMenu()
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("1.Create new Course");
             Console.WriteLine("2.Create new Student");
             Console.WriteLine("3.Create new Trainer");
             Console.WriteLine("4.Create new Assigment");
         }
-        public static List<Course> FillCourseList()
+        public static void SyntheticMenu()
         {
-            List<Course> fillCourse = new List<Course>();
-            Console.WriteLine("How many Courses y want to create");
-            var countOfCourses = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < countOfCourses; i++)
-            {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("1.View All Students");
+            Console.WriteLine("2.View All Courses");
+            Console.WriteLine("3.View All Assigments");
+            Console.WriteLine("4.View All Trainers");
+            Console.WriteLine("5.View Students Per Course");
+            Console.WriteLine("6.View Trainers Per Course");
+            Console.WriteLine("7.View Assigments Per Course");
+            Console.WriteLine("8.View Students with more than one Course");
+            Console.WriteLine("9.View Assigments Per Student");
 
-                Console.WriteLine("Title");
-                var title = Console.ReadLine();
-                Console.WriteLine("Stream");
-                var stream = Console.ReadLine();
-                Console.WriteLine("Starting Date");
-                var startDate = Convert.ToDateTime(Console.ReadLine());
-                Console.WriteLine("Ending date");
-                var endDate = Convert.ToDateTime(Console.ReadLine());
-                if (startDate > endDate)
-                {
-                    throw new Exception("Please insert correct date");
-
-                }
-                fillCourse.Add(new Course(title, null, stream, startDate, endDate));
-            }
-            return fillCourse;
-        }
-        public static List<Student> FillStudentList()
-        {
-            List<Student> fillStudent = new List<Student>();
-
-            Console.WriteLine("How many students you want to create ?");
-            var countOfStudents = Convert.ToInt32(Console.ReadLine());
-            for (int i = 0; i < countOfStudents; i++)
-            {
-                Console.WriteLine("Name");
-                var firstName = Console.ReadLine();
-                Console.WriteLine("Lastname");
-                var lastName = Console.ReadLine();
-                Console.WriteLine("Date of birth");
-                var dateOfBirth = Convert.ToDateTime(Console.ReadLine());
-                Console.WriteLine("Tution fees");
-                var tuitionFees = Convert.ToDouble(Console.ReadLine());
-                fillStudent.Add(new Student(firstName, lastName, dateOfBirth, tuitionFees));
-            }
-            return fillStudent;
         }
     }
-
 }
 
